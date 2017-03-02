@@ -1,0 +1,7 @@
+1. RXD£º
+Reed I. S., and X. Yu, Adaptive multiple-band CFAR detection of an optical pattern with unknown spectral distribution. 
+IEEE Trans. Acoustics, Speech and Signal Proc. 38, p p. 1760-1770, October 1990.
+
+2. N-FINDR:
+N-FINDR: an algorithm for fast autonomous spectral end-member determination in hyperspectral data ×÷ÕßMichael E. Winter
+new improvements in parallel implementation of N-FINDR algorithm. Luo W,Zhang B et;2012
