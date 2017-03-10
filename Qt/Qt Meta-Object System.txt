@@ -1,0 +1,89 @@
+一. Qt元数据系统
+1.  Meta-Object System  
+Qt's meta-object system provides ：
+1) the signals and slots mechanism for inter-object(对象间) communication. -- 信号和槽机制
+2) run-time type information. -- 运行时类型信息
+3) the dynamic property system. -- 动态属性系统
+
+The meta-object system is based on three things:
+The QObject class provides a base class for objects that can take advantage of the meta-object system.
+The Q_OBJECT macro inside the private section of the class declaration is used to enable meta-object features, such as dynamic properties, signals, and slots.
+The Meta-Object Compiler (moc) supplies each QObject subclass with the necessary code to implement meta-object features.
+
+The moc tool reads a C++ source file. If it finds one or more class declarations that contain the Q_OBJECT macro, 
+it produces another C++ source file(moc_XXX.cpp) which contains the meta-object code for each of those classes.
+
+This generated source file is either #include'd into the class's source file or, more usually, 
+compiled and linked with the class's implementation.
+这个生成的源文件是#include到类的源文件中，或者更通常地，编译并且与类的实现链接.
+
+除了信号槽机制，元数据对象还提供了以下特性:
+1) QObject::metaObject() returns the associated meta-object for the class.
+	QObject::metaObject()返回类的相关元对象。
+2) QMetaObject::className() returns the class name as a string at run-time, 
+	without requiring native run-time type information (RTTI) support through the C++ compiler.
+	而不需要通过C ++编译器提供本机运行时类型信息（RTTI）支持。
+3) QObject::inherits() function returns whether an object is an instance of a class that inherits(继承) a 
+	specified class within the QObject inheritance tree.（判断一个类是否继承至祖先QObject）
+4) QObject::tr() and QObject::trUtf8() translate strings for internationalization.（国际化支持）
+5) QObject::setProperty() and QObject::property() dynamically set and get properties(属性) by name.
+6) QMetaObject::newInstance() constructs a new instance of the class.
+It is also possible to perform dynamic casts using qobject_cast() on QObject classes.(类似于C++里的dynamic_cast())。
+
+官方文档推荐所有的QObject的子类都定义Q_OBJECT这个宏，不管你是不是要使用信号槽或者其他的一些特性。
+
+2. QMetaObject类
+The QMetaObject class contains meta-information about Qt objects.（QMetaObject类包含有关Qt对象的元信息）。
+
+The Qt Meta-Object System in Qt is responsible for the signals and slots inter-object communication mechanism,
+runtime type information, and the Qt property system. 
+A single QMetaObject instance is created for each QObject subclass that is used in an application, 
+and this instance stores all the meta-information for the QObject subclass. This object is available as QObject::metaObject().
+Qt中的Qt元对象系统负责信号和槽间对象间通信机制，运行时类型信息和Qt属性系统。为应用程序中使用的每个QObject子类创建单个QMetaObject实例，
+并且此实例存储QObject子类的所有元信息。此对象可用作QObject :: metaObject()。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
